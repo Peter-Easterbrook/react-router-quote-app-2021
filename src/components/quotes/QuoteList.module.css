@@ -24,9 +24,8 @@
   letter-spacing: 2px;
   overflow: hidden;
   position: relative;
-  border-radius: 0.3rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 0.3rem;
+  border-radius: 3rem;
   font-weight: 300;
   transition: all 0.3s ease;
   font-size: clamp(0.5rem, 0.8vw, 0.7rem);

@@ -31,7 +31,7 @@
 .control textarea {
   font: inherit;
   padding: 0.35rem;
-  border-radius: 0.4rem;
+  border-radius: 2rem;
   background-color: #c6d7f8;
   border: 1px solid #c6d7f8;
   display: block;
