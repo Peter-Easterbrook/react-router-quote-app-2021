@@ -1,9 +1,21 @@
 .card {
   padding: 1rem;
   margin: 1rem auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  background-color: #82a7ee;
+  box-shadow: var(--shadow-elevation-medium);
+  border-radius: 0.3rem;
+  background-image: linear-gradient(
+    0deg,
+    hsl(219deg 76% 72%) 0%,
+    hsl(220deg 76% 74%) 11%,
+    hsl(220deg 77% 77%) 22%,
+    hsl(220deg 77% 79%) 33%,
+    hsl(219deg 77% 81%) 44%,
+    hsl(219deg 77% 83%) 56%,
+    hsl(219deg 77% 85%) 67%,
+    hsl(219deg 78% 87%) 78%,
+    hsl(219deg 78% 89%) 89%,
+    hsl(219deg 77% 91%) 100%
+  );
   border: 1px solid #040d1d;
   max-width: 40rem;
 }

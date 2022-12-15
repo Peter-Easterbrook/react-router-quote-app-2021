@@ -1,7 +1,7 @@
-import { useRef, useEffect } from 'react';
-
+import { useEffect, useRef } from 'react';
 import useHttp from '../../hooks/use-http';
 import { addComment } from '../../lib/api';
+import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './NewCommentForm.module.css';
 
@@ -29,20 +29,22 @@ const NewCommentForm = (props) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={submitFormHandler}>
-      {status === 'pending' && (
-        <div className='centered'>
-          <LoadingSpinner />
+    <Card>
+      <form className={classes.form} onSubmit={submitFormHandler}>
+        {status === 'pending' && (
+          <div className='centered'>
+            <LoadingSpinner />
+          </div>
+        )}
+        <div className={classes.control} onSubmit={submitFormHandler}>
+          <label htmlFor='comment'>Your Comment</label>
+          <textarea id='comment' rows='5' ref={commentTextRef}></textarea>
         </div>
-      )}
-      <div className={classes.control} onSubmit={submitFormHandler}>
-        <label htmlFor='comment'>Your Comment</label>
-        <textarea id='comment' rows='5' ref={commentTextRef}></textarea>
-      </div>
-      <div className={classes.actions}>
-        <button className='btn'>Add Comment</button>
-      </div>
-    </form>
+        <div className={classes.actions}>
+          <button className='btn'>Add Comment</button>
+        </div>
+      </form>
+    </Card>
   );
 };
 

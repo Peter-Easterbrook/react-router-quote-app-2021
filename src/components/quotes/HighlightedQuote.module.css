@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
+
 .quote {
-  background-color: #091c41;
+  background-image: linear-gradient(
+    0deg,
+    hsl(220deg 77% 7%) 0%,
+    hsl(219deg 73% 8%) 11%,
+    hsl(218deg 73% 9%) 22%,
+    hsl(217deg 77% 11%) 33%,
+    hsl(217deg 80% 12%) 44%,
+    hsl(217deg 82% 13%) 56%,
+    hsl(217deg 82% 14%) 67%,
+    hsl(218deg 81% 15%) 78%,
+    hsl(219deg 80% 17%) 89%,
+    hsl(220deg 77% 18%) 100%
+  );
   color: white;
   border-radius: 2rem;
   padding: 3rem;
@@ -7,13 +21,15 @@
   width: 90%;
   max-width: 40rem;
   border: 1px solid #96b6ee;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .quote p {
-  font-size: 2.5rem;
-  font-weight: 300;
+  font-size: 3.4rem;
+  font-weight: 400;
   color: #fff;
+  font-family: 'Rochester', cursive;
+  text-shadow: var(--text-shadow);
 }
 
 .quote figcaption {
@@ -21,4 +37,6 @@
   font-size: 1.5rem;
   text-align: right;
   color: #96b6ee;
+  font-weight: 400;
+  text-shadow: var(--text-shadow);
 }

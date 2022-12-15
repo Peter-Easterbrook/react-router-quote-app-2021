@@ -6,7 +6,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #e9f0fc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,11 +33,11 @@
   display: block;
   width: 100%;
   font-size: 1.25rem;
+  box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 .control input:focus,
 .control textarea:focus {
-  background-color: #d8e4fa;
   outline: none;
 }
 
@@ -45,16 +45,18 @@
   text-align: right;
 }
 
-.actions button {
+.actions .btn {
   font-weight: 300;
   letter-spacing: 2px;
   font-size: 0.8rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: var(--shadow-elevation-medium);
+  text-shadow: var(--text-shadow);
 }
-.actions button:hover {
-  transition: all 0.3s ease;
+.actions .btn:hover {
+  transition: var(--transition);
+  font-weight: 500;
 }
-.actions button:active {
+.actions .btn:active {
   transform: scale(0.9);
   box-shadow: inset 0 0 10px #000;
 }

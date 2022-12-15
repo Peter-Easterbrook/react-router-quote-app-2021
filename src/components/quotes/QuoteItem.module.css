@@ -4,9 +4,21 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-elevation-medium);
   border-radius: 0.3rem;
-  background-color: #82a7ee;
+  background-image: linear-gradient(
+    0deg,
+    hsl(219deg 76% 72%) 0%,
+    hsl(220deg 76% 74%) 11%,
+    hsl(220deg 77% 77%) 22%,
+    hsl(220deg 77% 79%) 33%,
+    hsl(219deg 77% 81%) 44%,
+    hsl(219deg 77% 83%) 56%,
+    hsl(219deg 77% 85%) 67%,
+    hsl(219deg 78% 87%) 78%,
+    hsl(219deg 78% 89%) 89%,
+    hsl(219deg 77% 91%) 100%
+  );
   max-width: 50rem;
 }
 
@@ -23,7 +35,6 @@
 .item blockquote {
   margin: 0;
   text-align: left;
-  font-size: 1.5rem;
   color: #141414;
 }
 
@@ -37,8 +48,8 @@
 .item figcaption {
   font-style: italic;
   color: #141414;
-  font-weight: 300;
-  font-size: 0.8rem;
+  font-weight: 400;
+  font-size: 0.9rem;
   text-align: right;
   margin-right: 3rem;
 }
@@ -52,17 +63,13 @@
     width: 100%;
   }
 
-  .item blockquote {
-    font-size: 1.2rem;
-  }
-
   .item p {
     font-size: 1rem;
   }
 
   .item figcaption {
-    font-size: 0.7rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 400;
     margin-right: 0;
     margin-bottom: 0.5rem;
   }

@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap');
+:root {
+  --shadow-color: 240deg 100% 4%;
+  --shadow-elevation-medium: 0px 0.5px 0.6px hsl(var(--shadow-color) / 0.24),
+    0px 1.8px 2px -0.8px hsl(var(--shadow-color) / 0.24),
+    -0.1px 4.4px 5px -1.7px hsl(var(--shadow-color) / 0.24),
+    -0.2px 10.7px 12px -2.5px hsl(var(--shadow-color) / 0.24);
+  --text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
+  --transition: all 0.2s ease-out;
+}
 *,
 *::before,
 *::after {
@@ -25,6 +34,7 @@ dl,
 dd {
   margin: 0;
   font-family: 'Raleway', sans-serif;
+  text-shadow: var(--text-shadow);
 }
 /* Backgrounds courtesy of https://www.svgbackgrounds.com/ */
 body {
@@ -35,10 +45,11 @@ body {
   min-height: 100vh;
   overflow: auto;
   font-weight: 300;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
   margin: 0;
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation: fadeInAnimation 3s ease-out 1 forwards;
 }
 @keyframes fadeInAnimation {
   0% {
@@ -49,18 +60,18 @@ body {
   }
 }
 
-body::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-body::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: #8b92a5;
   border-radius: 10px;
 }
-body::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background: #b5ccf6;
 }
-body::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: #091223;
 }
 @media screen and (min-width: 1200px) {
@@ -75,6 +86,16 @@ body::-webkit-scrollbar-track {
       rgba(5, 14, 31, 1) 100%
     );
   }
+}
+ul {
+  list-style: none;
+  padding: 0;
+  text-shadow: var(--text-shadow);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  text-shadow: var(--text-shadow);
 }
 
 .centered {
@@ -97,21 +118,23 @@ body::-webkit-scrollbar-track {
   cursor: pointer;
   background-color: #091c41;
   color: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #96b6ee;
   text-transform: uppercase;
   letter-spacing: 2px;
   overflow: hidden;
   position: relative;
   border-radius: 3rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: var(--shadow-elevation-medium);
+  text-shadow: var(--text-shadow);
   font-weight: 300;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   font-size: clamp(0.5rem, 0.8vw, 0.7rem);
 }
 .btn:hover {
   background-color: #b5ccf6;
   border-color: #091c41;
   color: #091c41;
+  font-weight: 500;
 }
 .btn:active {
   transform: scale(0.9);
@@ -123,7 +146,7 @@ body::-webkit-scrollbar-track {
   color: #fff;
   border: none;
   background-color: #091c41;
-  border: 1px solid #fff;
+  border: 1px solid #96b6ee;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   border-radius: 3rem;
@@ -131,8 +154,9 @@ body::-webkit-scrollbar-track {
   letter-spacing: 2px;
   font-weight: 300;
   font-size: 0.8rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transition: var(--transition);
+  box-shadow: var(--shadow-elevation-medium);
+  text-shadow: var(--text-shadow);
 }
 .btn--flat:hover {
   background-color: #82a7ee;
