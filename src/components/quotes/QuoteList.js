@@ -1,5 +1,6 @@
-import { Fragment } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Fragment, Suspense } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import LoadingSpinner from '../UI/LoadingSpinner';
 
 import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
@@ -37,16 +38,18 @@ const QuoteList = (props) => {
           Sort {isSortingAscending ? 'Descending' : 'Ascending'}
         </button>
       </div>
-      <ul className={classes.list}>
-        {sortedQuotes.map((quote) => (
-          <QuoteItem
-            key={quote.id}
-            id={quote.id}
-            author={quote.author}
-            text={quote.text}
-          />
-        ))}
-      </ul>
+      <Suspense fallback={<LoadingSpinner />}>
+        <ul className={classes.list}>
+          {sortedQuotes.map((quote) => (
+            <QuoteItem
+              key={quote.id}
+              id={quote.id}
+              author={quote.author}
+              text={quote.text}
+            />
+          ))}
+        </ul>
+      </Suspense>
     </Fragment>
   );
 };

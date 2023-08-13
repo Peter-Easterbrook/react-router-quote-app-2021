@@ -23,9 +23,10 @@ const NewCommentForm = (props) => {
 
     const enteredText = commentTextRef.current.value;
 
-    // optional: Could validate here
-
     sendRequest({ commentData: { text: enteredText }, quoteId: props.quoteId });
+
+    // Clear the textarea input after submission
+    commentTextRef.current.value = '';
   };
 
   return (
@@ -38,7 +39,13 @@ const NewCommentForm = (props) => {
         )}
         <div className={classes.control} onSubmit={submitFormHandler}>
           <label htmlFor='comment'>Your Comment</label>
-          <textarea id='comment' rows='5' ref={commentTextRef}></textarea>
+          <textarea
+            id='comment'
+            rows='5'
+            ref={commentTextRef}
+            pattern='^(?!\s*$).+'
+            required
+          ></textarea>
         </div>
         <div className={classes.actions}>
           <button className='btn'>Add Comment</button>
