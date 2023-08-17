@@ -1,63 +1,57 @@
-import { Fragment, useRef, useState } from 'react';
+import { Fragment, useState } from 'react';
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
 
 const QuoteForm = (props) => {
-  const [setIsEntering] = useState(false);
-
-  const authorInputRef = useRef();
-  const textInputRef = useRef();
+  const [isEntering, setIsEntering] = useState(false);
+  const [author, setAuthor] = useState('');
+  const [text, setText] = useState('');
 
   function submitFormHandler(event) {
     event.preventDefault();
 
-    const enteredAuthor = authorInputRef.current.value;
-    const enteredText = textInputRef.current.value;
+    if (author.trim() === '' || text.trim() === '') {
+      return;
+    }
 
-    // optional: Could validate here
+    props.onAddQuote({ author, text });
 
-    props.onAddQuote({ author: enteredAuthor, text: enteredText });
+    setAuthor('');
+    setText('');
   }
 
-  const finishedEnteringHandler = () => {
-    setIsEntering(false);
-  };
-
-  const formFocussedHandler = () => {
-    setIsEntering(true);
-  };
+  const loadingSpinner = props.isLoading && <LoadingSpinner />;
 
   return (
     <Fragment>
       <Card>
-        <form
-          onFocus={formFocussedHandler}
-          className={classes.form}
-          onSubmit={submitFormHandler}
-        >
-          {props.isLoading && (
-            <div className={classes.loading}>
-              <LoadingSpinner />
-            </div>
-          )}
+        <form className={classes.form} onSubmit={submitFormHandler}>
+          {loadingSpinner}
 
           <div className={classes.control}>
             <label htmlFor='author'>Author</label>
             <input
               type='text'
               id='author'
-              ref={authorInputRef}
-              pattern='^[A-Za-z]+(\s[A-Za-z]+)?$'
+              value={author}
+              onChange={(event) => setAuthor(event.target.value)}
+              pattern='^[A-Za-z]+(\s[A-Za-z]+){0,2}$'
               required
             />
           </div>
           <div className={classes.control}>
             <label htmlFor='text'>Text</label>
-            <textarea id='text' rows='5' ref={textInputRef} required></textarea>
+            <textarea
+              id='text'
+              rows='5'
+              value={text}
+              onChange={(event) => setText(event.target.value)}
+              required
+            ></textarea>
           </div>
           <div className={classes.actions}>
-            <button onClick={finishedEnteringHandler} className='btn'>
+            <button onClick={() => setIsEntering(false)} className='btn'>
               Add Quote
             </button>
           </div>

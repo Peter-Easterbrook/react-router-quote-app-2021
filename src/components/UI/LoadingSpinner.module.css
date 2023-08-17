@@ -1,10 +1,16 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
 .spinner {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  border: 2px solid #d7e3f9;
+  border: 2px solid #337aff;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
