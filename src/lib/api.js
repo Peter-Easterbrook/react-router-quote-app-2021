@@ -1,4 +1,4 @@
-const FIREBASE_DOMAIN = 'https://react-hooks-update-9b87b.firebaseio.com';
+const FIREBASE_DOMAIN = process.env.REACT_APP_FIREBASE_DOMAIN;
 
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);
