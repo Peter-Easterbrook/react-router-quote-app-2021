@@ -28,13 +28,15 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <span className={classes.quote}>
-          <FaQuoteLeft />
-        </span>
-        Great Quotes
-        <span className={classes.quote}>
-          <FaQuoteRight />
-        </span>
+        <NavLink to='/quotes'>
+          <span className={classes.quote}>
+            <FaQuoteLeft />
+          </span>
+          Great Quotes
+          <span className={classes.quote}>
+            <FaQuoteRight />
+          </span>
+        </NavLink>
       </div>
 
       <nav className={classes.nav} onMouseLeave={() => setHoveredNavItem(null)}>
