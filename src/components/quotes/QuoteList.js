@@ -1,12 +1,24 @@
 import { Fragment, Suspense } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../UI/LoadingSpinner';
-
 import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 
+// const sortQuotes = (quotes, ascending) => {
+//   return quotes.sort((quoteA, quoteB) => {
+//     if (ascending) {
+//       return quoteA.id > quoteB.id ? 1 : -1;
+//     } else {
+//       return quoteA.id < quoteB.id ? 1 : -1;
+//     }
+//   });
+// };
+
 const sortQuotes = (quotes, ascending) => {
-  return quotes.sort((quoteA, quoteB) => {
+  // Create a new array using slice to avoid modifying the original array
+  const sortedQuotes = [...quotes];
+
+  return sortedQuotes.sort((quoteA, quoteB) => {
     if (ascending) {
       return quoteA.id > quoteB.id ? 1 : -1;
     } else {

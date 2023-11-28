@@ -1,5 +1,5 @@
+import { BiExpand } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
-
 import classes from './QuoteItem.module.css';
 
 const QuoteItem = (props) => {
@@ -12,7 +12,7 @@ const QuoteItem = (props) => {
         <figcaption>{props.author}</figcaption>
       </figure>
       <Link to={`/quotes/${props.id}`} className='btn'>
-        View Fullscreen
+        <BiExpand />
       </Link>
     </li>
   );
