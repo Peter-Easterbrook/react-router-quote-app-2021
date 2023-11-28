@@ -1,12 +1,14 @@
 import { Fragment, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
 
 const QuoteForm = (props) => {
-  const [isEntering, setIsEntering] = useState(false);
   const [author, setAuthor] = useState('');
   const [text, setText] = useState('');
+
+  const navigate = useNavigate();
 
   function submitFormHandler(event) {
     event.preventDefault();
@@ -19,6 +21,8 @@ const QuoteForm = (props) => {
 
     setAuthor('');
     setText('');
+
+    navigate('/quotes');
   }
 
   const loadingSpinner = props.isLoading && <LoadingSpinner />;
@@ -40,6 +44,7 @@ const QuoteForm = (props) => {
               required
             />
           </div>
+
           <div className={classes.control}>
             <label htmlFor='text'>Text</label>
             <textarea
@@ -50,10 +55,9 @@ const QuoteForm = (props) => {
               required
             ></textarea>
           </div>
+
           <div className={classes.actions}>
-            <button onClick={() => setIsEntering(false)} className='btn'>
-              Add Quote
-            </button>
+            <button className='btn'>Add Quote</button>
           </div>
         </form>
       </Card>

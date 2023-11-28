@@ -10,8 +10,8 @@
 }
 
 .noquotes p {
-  color: #262c2c;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 400;
 }
-
