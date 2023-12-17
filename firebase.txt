@@ -1,1 +1,1 @@
-Run the build command then run "firebase deploy --only hosting" via Powershell
+Run the build command then run "firebase deploy --only hosting" via Powershell however, you're using Vercel for this one so you can ignore this step.
