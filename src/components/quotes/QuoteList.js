@@ -4,18 +4,8 @@ import LoadingSpinner from '../UI/LoadingSpinner';
 import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 
-// const sortQuotes = (quotes, ascending) => {
-//   return quotes.sort((quoteA, quoteB) => {
-//     if (ascending) {
-//       return quoteA.id > quoteB.id ? 1 : -1;
-//     } else {
-//       return quoteA.id < quoteB.id ? 1 : -1;
-//     }
-//   });
-// };
-
 const sortQuotes = (quotes, ascending) => {
-  // Create a new array using slice to avoid modifying the original array
+  // Create a new array using spread to avoid modifying the original array
   const sortedQuotes = [...quotes];
 
   return sortedQuotes.sort((quoteA, quoteB) => {
@@ -38,7 +28,8 @@ const QuoteList = (props) => {
   const sortedQuotes = sortQuotes(props.quotes, isSortingAscending);
 
   const changeSortingHandler = () => {
-    navigate(location.pathname, {
+    navigate({
+      pathname: location.pathname,
       search: `?sort=${isSortingAscending ? 'desc' : 'asc'}`,
     });
   };
