@@ -54,7 +54,7 @@ const Comments = () => {
       <h2>User Comments</h2>
       <br />
       {!isAddingComment && (
-        <button className='btn' onClick={startAddCommentHandler}>
+        <button className='btn--flat' onClick={startAddCommentHandler}>
           Add a Comment
         </button>
       )}
