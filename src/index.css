@@ -75,9 +75,9 @@ html::-webkit-scrollbar-thumb:hover {
 html::-webkit-scrollbar-track {
   background: #091223;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   body {
-    padding: 0 15% 0 15%;
+    padding: 0 10%;
     background: rgb(5, 14, 31);
     background: linear-gradient(
       90deg,

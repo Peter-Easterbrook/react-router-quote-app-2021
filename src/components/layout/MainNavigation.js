@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
 
@@ -28,15 +27,7 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <NavLink to='/quotes'>
-          <span className={classes.quote}>
-            <FaQuoteLeft />
-          </span>
-          Great Quotes
-          <span className={classes.quote}>
-            <FaQuoteRight />
-          </span>
-        </NavLink>
+        <h1>"Great Quotes"</h1>
       </div>
 
       <nav className={classes.nav} onMouseLeave={() => setHoveredNavItem(null)}>
