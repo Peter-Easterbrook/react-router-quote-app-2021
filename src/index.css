@@ -15,7 +15,6 @@
   box-sizing: border-box;
 }
 
-
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -28,10 +27,14 @@ h4,
 p,
 figure,
 blockquote,
+figcaption,
 dl,
 dd {
   margin: 0;
   font-family: 'Raleway', sans-serif;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-wrap: pretty;
   text-shadow: var(--text-shadow);
 }
 /* Backgrounds courtesy of https://www.svgbackgrounds.com/ */
@@ -43,7 +46,7 @@ body {
   min-height: 100vh;
   overflow: auto;
   font-weight: 300;
-  user-select: none;
+  /* user-select: none; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: auto;
   margin: 0;
@@ -88,7 +91,6 @@ html::-webkit-scrollbar-track {
 ul {
   list-style: none;
   padding: 0;
-  text-shadow: var(--text-shadow);
 }
 a {
   text-decoration: none;

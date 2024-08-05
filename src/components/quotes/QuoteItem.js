@@ -2,16 +2,19 @@ import { BiExpand } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import classes from './QuoteItem.module.css';
 
-const QuoteItem = (props) => {
+const QuoteItem = ({ latin, text, author, id }) => {
   return (
     <li className={classes.item}>
       <figure>
         <blockquote>
-          <p>{props.text}</p>
+          <p>{latin}</p>
         </blockquote>
-        <figcaption>{props.author}</figcaption>
+        <blockquote>
+          <p>{text}</p>
+        </blockquote>
+        <figcaption>{author}</figcaption>
       </figure>
-      <Link to={`/quotes/${props.id}`} className='btn-icon'>
+      <Link to={`/quotes/${id}`} className='btn-icon'>
         <BiExpand />
       </Link>
     </li>

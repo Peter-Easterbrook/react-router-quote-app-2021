@@ -4,9 +4,10 @@ import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
 
-const QuoteForm = (props) => {
+const QuoteForm = ({ isLoading, onAddQuote }) => {
   const [author, setAuthor] = useState('');
   const [text, setText] = useState('');
+  const [latin, setLatin] = useState('');
 
   const navigate = useNavigate();
 
@@ -17,15 +18,16 @@ const QuoteForm = (props) => {
       return;
     }
 
-    props.onAddQuote({ author, text });
+    onAddQuote({ author, latin, text });
 
     setAuthor('');
+    setLatin('');
     setText('');
 
     navigate('/quotes');
   }
 
-  const loadingSpinner = props.isLoading && <LoadingSpinner />;
+  const loadingSpinner = isLoading && <LoadingSpinner />;
 
   return (
     <Fragment>
@@ -46,14 +48,26 @@ const QuoteForm = (props) => {
           </div>
 
           <div className={classes.control}>
+            <label htmlFor='latin'>Latin</label>
+            <textarea
+              type='text'
+              id='latin'
+              value={latin}
+              rows='3'
+              onChange={(event) => setLatin(event.target.value)}
+              required
+            />
+          </div>
+          <div className={classes.control}>
             <label htmlFor='text'>Text</label>
             <textarea
+              type='text'
               id='text'
-              rows='5'
               value={text}
+              rows='3'
               onChange={(event) => setText(event.target.value)}
               required
-            ></textarea>
+            />
           </div>
 
           <div className={classes.actions}>

@@ -25,11 +25,11 @@
 }
 
 .quote p {
-  font-size: 3.4rem;
+  font-size: clamp(2.5rem, 2.5vw, 3.5rem);
   font-weight: 400;
   color: #fff;
   font-family: 'Rochester', cursive;
-  text-shadow: var(--text-shadow);
+  text-align: center;
 }
 
 .quote figcaption {
@@ -38,5 +38,4 @@
   text-align: right;
   color: #96b6ee;
   font-weight: 400;
-  text-shadow: var(--text-shadow);
 }

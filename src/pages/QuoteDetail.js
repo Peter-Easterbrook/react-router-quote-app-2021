@@ -1,10 +1,10 @@
 import { Fragment, useEffect } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 
 import HighlightedQuote from '../components/quotes/HighlightedQuote';
+import LoadingSpinner from '../components/UI/LoadingSpinner';
 import useHttp from '../hooks/use-http';
 import { getSingleQuote } from '../lib/api';
-import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 const QuoteDetail = () => {
   const params = useParams();
@@ -40,7 +40,11 @@ const QuoteDetail = () => {
 
   return (
     <Fragment>
-      <HighlightedQuote text={loadedQuote.text} author={loadedQuote.author} />
+      <HighlightedQuote
+        text={loadedQuote.text}
+        author={loadedQuote.author}
+        latin={loadedQuote.latin}
+      />
       <Outlet />
     </Fragment>
   );
