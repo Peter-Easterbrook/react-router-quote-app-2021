@@ -15,8 +15,8 @@
     hsl(220deg 77% 18%) 100%
   );
   color: white;
-  border-radius: 2rem;
-  padding: 3rem;
+  border-radius: var(--border-radius);
+  padding: clamp(1rem, 2.5vw, 3rem);
   margin: 3rem auto;
   width: 90%;
   max-width: 40rem;
@@ -34,7 +34,8 @@
 
 .quote figcaption {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  margin-top: clamp(1rem, 2.5vw, 2rem);
   text-align: right;
   color: #96b6ee;
   font-weight: 400;

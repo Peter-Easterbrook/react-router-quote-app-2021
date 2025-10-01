@@ -14,11 +14,11 @@ const LINKS = [
     label: 'Add Quote',
     to: '/new-quote',
   },
-  {
-    slug: 'login',
-    label: 'Login',
-    href: '/login',
-  },
+  // {
+  //   slug: 'login',
+  //   label: 'Login',
+  //   href: '/login',
+  // },
 ];
 
 const MainNavigation = () => {

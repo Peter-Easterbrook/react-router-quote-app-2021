@@ -46,3 +46,34 @@
   margin: 0;
   padding: 0;
 }
+
+@media screen and (max-width: 650px) {
+  .sorting {
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .sorting button {
+    padding: 0.5rem 1rem;
+    font-size: clamp(0.6rem, 2vw, 0.75rem);
+  }
+
+  .list {
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sorting {
+    height: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sorting button {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .list {
+    grid-gap: 0.75rem;
+  }
+}
