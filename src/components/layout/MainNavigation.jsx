@@ -43,9 +43,8 @@ const MainNavigation = () => {
                 <motion.div
                   layoutId='hovered'
                   className={classes.hovered}
-                  initial={{
-                    borderRadius: 32,
-                  }}
+                  initial={{ borderRadius: 32 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 />
               )}
 
